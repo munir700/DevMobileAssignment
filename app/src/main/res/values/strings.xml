@@ -1,0 +1,37 @@
+<resources>
+    <string name="app_name">Mobile Dev Assignment</string>
+
+    <string name="STR_SERVER_TIME_OUT_ERROR">The request timed out. Please try again later !</string>
+    <string name="STR_SERVER_NOT_REACHABLE_ERROR">There was an error connecting to our serves. Please try again later.</string>
+    <string name="NO_INTERNET_CONNECTIVITY">It looks like you are not connected to the internet. Please check your internet settings and try again.</string>
+    <string name="NO_INTERNET_CONNECTIVITY_HEAD">No Internet Connection</string>
+    <string name="STR_NO_RESULT">We didn\'t find anything matching. Try again.</string>
+    <string name="STR_NO_RESULTS">NO RESULTS FOUND!</string>
+    <string name="STR_SERVER_ERROR_TITLE">SERVER ERROR!</string>
+    <string name="STR_RETRY">RETRY</string>
+    <string name="STR_OK">OK</string>
+
+    <string name="STR_NO">No</string>
+
+    <string name="STR_YES">Yes</string>
+    <string name="STR_ERROR_FETCHING_DETIAL">Error fetching details, please try again</string>
+    <string name="STR_MOVIE_DETAILS">MOVIE DETAILS</string>
+    <string name="STR_LOADING_DETAILS">Loading details…</string>
+    <string name="STR_READ_MORE">" read more"</string>
+    <string name="STR_READ_LESS">" read less"</string>
+    <string name="DETAILS">Details</string>
+    <string name="released">Released</string>
+    <string name="tag_line">Tag Line</string>
+    <string name="released_date">Released Date</string>
+    <string name="language">Language</string>
+    <string name="production_country">Production Countries</string>
+    <string name="original_title">Original title</string>
+
+    <string name="STR_DETAILS_TRANSITION">DETAILS_TRANSITION</string>
+    <string name="STR_SORTING">Sorting</string>
+    <string name="STR_MORE_MEDIA">More Media</string>
+    <string name="STR_POPULAR">Popular</string>
+    <string name="STR_NOW_PLAYING">Now Playing</string>
+    <string name="STR_UPCOMING">Upcoming</string>
+    <string name="STR_TOP_RATED">TOP RATED</string>
+</resources>

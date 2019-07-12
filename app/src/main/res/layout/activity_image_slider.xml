@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/black"
+        android:orientation="vertical">
+
+        <include
+            android:id="@+id/layout_toolbar"
+            layout="@layout/toolbar_with_title_and_back_button"
+            app:icon='@{@drawable/ic_back_white}' />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_below="@+id/layout_toolbar"
+            android:id="@+id/viewPager_contraint"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerInParent="true">
+
+
+
+
+            <androidx.viewpager.widget.ViewPager
+                android:id="@+id/viewPager"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:fitsSystemWindows="true"
+                android:transitionName="@string/STR_DETAILS_TRANSITION"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/guideline" />
+
+
+            <ImageButton
+                android:id="@+id/next_ib"
+                android:layout_width="20dp"
+                android:layout_height="30dp"
+                android:alpha="0.7"
+                android:background="@color/text_color_6"
+                android:tint="@color/white"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintRight_toRightOf="@+id/viewPager"
+                app:layout_constraintTop_toTopOf="@+id/viewPager"
+                app:srcCompat="@drawable/ic_right_arrow" />
+
+            <ImageButton
+                android:id="@+id/previous_ib"
+                android:layout_width="20dp"
+                android:layout_height="30dp"
+                android:alpha="0.7"
+                android:background="@color/text_color_6"
+                android:rotation="180"
+                android:tint="@color/white"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/viewPager"
+                app:srcCompat="@drawable/ic_right_arrow" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_percent="0.4" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </RelativeLayout>
+</layout>

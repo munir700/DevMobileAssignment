@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_round_edge_dialog">
+
+        <TextView
+            android:id="@+id/tv_message"
+            style="@style/DialogTextView"
+            android:layout_width="@dimen/_265sdp"
+            android:layout_height="wrap_content"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Do you want to remove this email alert?" />
+
+        <TextView
+            android:id="@+id/btn_ok"
+            style="@style/DialogButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/STR_OK"
+            android:background="?attr/selectableItemBackground"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_horizontal_seperator" />
+
+        <TextView
+            android:id="@+id/btn_no"
+            style="@style/DialogButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/STR_NO"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@+id/tv_vertical_seperator"
+            app:layout_constraintTop_toBottomOf="@+id/tv_horizontal_seperator" />
+
+        <TextView
+            android:id="@+id/btn_yes"
+            style="@style/DialogButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/STR_YES"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toRightOf="@+id/tv_vertical_seperator"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_horizontal_seperator" />
+
+        <TextView
+            android:id="@+id/tv_vertical_seperator"
+            android:layout_width="@dimen/_1sdp"
+            android:layout_height="0dp"
+            android:layout_marginBottom="@dimen/_8sdp"
+            android:background="@color/border_color_2"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_horizontal_seperator" />
+
+        <TextView
+            android:id="@+id/tv_horizontal_seperator"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_1sdp"
+            android:layout_marginLeft="@dimen/_8sdp"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:layout_marginRight="@dimen/_8sdp"
+            android:background="@color/border_color_2"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_message" />
+
+        <androidx.constraintlayout.widget.Group
+            android:id="@+id/group_yes_no_btns"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            app:constraint_referenced_ids="btn_yes, btn_no, tv_vertical_seperator" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

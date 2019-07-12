@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="header_text_size">@dimen/_13ssp</dimen>
+    <dimen name="text_size_large">@dimen/_13ssp</dimen>
+    <dimen name="button_height">@dimen/_28sdp</dimen>
+</resources>
