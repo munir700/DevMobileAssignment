@@ -1,7 +1,7 @@
 package assignment.cleancode.mobiledevassignment.enums;
 
 
-import android.assignment.R;
+import assignment.cleancode.mobiledevassignment.R;
 
 public enum ErrorResponseEnum {
 

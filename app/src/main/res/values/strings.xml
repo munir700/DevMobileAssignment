@@ -30,8 +30,7 @@
     <string name="STR_DETAILS_TRANSITION">DETAILS_TRANSITION</string>
     <string name="STR_SORTING">Sorting</string>
     <string name="STR_MORE_MEDIA">More Media</string>
-    <string name="STR_POPULAR">Popular</string>
-    <string name="STR_NOW_PLAYING">Now Playing</string>
-    <string name="STR_UPCOMING">Upcoming</string>
-    <string name="STR_TOP_RATED">TOP RATED</string>
+
+    <string name="STR_DATE_ASC">Ascending Date</string>
+    <string name="STR_DATE_DESC">Descending Date</string>
 </resources>

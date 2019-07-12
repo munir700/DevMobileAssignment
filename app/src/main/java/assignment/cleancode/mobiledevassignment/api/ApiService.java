@@ -10,6 +10,6 @@ import retrofit2.http.Query;
 public interface ApiService {
 
     @GET("movie/{movie_id}")
-    Call<Movie> getMovieDetail(@Path("movie_id") int movieId, @Query("api_key") String apiKey, @Query("language") String lang);
+    Call<Movie> getMovieDetail(@Path("movie_id") int movieId, @Query("api_key") String apiKey);
 
 }

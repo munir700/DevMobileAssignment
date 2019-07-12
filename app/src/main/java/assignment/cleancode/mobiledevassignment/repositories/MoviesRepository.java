@@ -37,13 +37,13 @@ public class MoviesRepository {
 
     }
 
-    public MutableLiveData<ArrayListWithTotalResultCount<MovieListing>> getMoviesList(final BaseViewModel viewModel, Call<ArrayListWithTotalResultCount<MovieListing>> listCall, final String playingType, int pageSize) {
+    public MutableLiveData<ArrayListWithTotalResultCount<MovieListing>> getMoviesList(final BaseViewModel viewModel, Call<ArrayListWithTotalResultCount<MovieListing>> listCall, final String sortBy, int pageSize) {
 
         final MutableLiveData<ArrayListWithTotalResultCount<MovieListing>> moviesLiveData = new MutableLiveData<>();
         if (networkUtils.isConnectedToInternet()) {
             if (listCall != null)
                 listCall.cancel();
-            listCall = apiEnvelopeService.getMovieList(playingType, BuildConfig.API_KEY, "en-US", pageSize);
+            listCall = apiEnvelopeService.getDiscoverMovieList(BuildConfig.API_KEY, "2016-12-31", sortBy, pageSize);
             listCall.enqueue(new BaseNetworkCallBack<ArrayListWithTotalResultCount<MovieListing>>(viewModel) {
                 @Override
                 public void onResponse(Call<ArrayListWithTotalResultCount<MovieListing>> call, Response<ArrayListWithTotalResultCount<MovieListing>> response) {
@@ -68,7 +68,7 @@ public class MoviesRepository {
             if (listCall != null)
                 listCall.cancel();
 
-            listCall = apiService.getMovieDetail(Integer.valueOf(movieId), BuildConfig.API_KEY, "en-US");
+            listCall = apiService.getMovieDetail(Integer.valueOf(movieId), BuildConfig.API_KEY);
             listCall.enqueue(new BaseNetworkCallBack<Movie>(viewModel) {
                 @Override
                 public void onResponse(Call<Movie> call, Response<Movie> response) {

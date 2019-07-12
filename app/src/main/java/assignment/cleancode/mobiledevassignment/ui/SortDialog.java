@@ -13,8 +13,13 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.List;
 
 import assignment.cleancode.mobiledevassignment.R;
+import assignment.cleancode.mobiledevassignment.adapter.SortDialogAdapter;
 import assignment.cleancode.mobiledevassignment.models.SortModel;
 import assignment.cleancode.mobiledevassignment.preferences.PreferenceHandler;
+import assignment.cleancode.mobiledevassignment.utils.AppConstants;
+
+import static assignment.cleancode.mobiledevassignment.utils.AppConstants.INDEX_DATE_ASC;
+import static assignment.cleancode.mobiledevassignment.utils.AppConstants.INDEX_DATE_DESC;
 
 
 public class SortDialog extends Dialog {
@@ -75,21 +80,13 @@ public class SortDialog extends Dialog {
     private void setIndexSort(int position) {
 
         switch (position) {
-            case INDEX_POPULARITY:
-                preferenceHandler.setLastSelectedSort(AppConstants.POPULARITY);
-                preferenceHandler.setLastSelectedSortTitle(context.getString(R.string.STR_POPULAR));
+            case INDEX_DATE_DESC:
+                preferenceHandler.setLastSelectedSort(AppConstants.DATE_DESC);
+                preferenceHandler.setLastSelectedSortTitle(context.getString(R.string.STR_DATE_DESC));
                 break;
-            case INDEX_NOW_PLAYING:
-                preferenceHandler.setLastSelectedSort(AppConstants.NOWPLAYING);
-                preferenceHandler.setLastSelectedSortTitle(context.getString(R.string.STR_NOW_PLAYING));
-                break;
-            case INDEX_UP_COMING:
-                preferenceHandler.setLastSelectedSort(AppConstants.UPCOMING);
-                preferenceHandler.setLastSelectedSortTitle(context.getString(R.string.STR_UPCOMING));
-                break;
-            case INDEX_TOP_RATED:
-                preferenceHandler.setLastSelectedSort(AppConstants.TOPRATED);
-                preferenceHandler.setLastSelectedSortTitle(context.getString(R.string.STR_TOP_RATED));
+            case INDEX_DATE_ASC:
+                preferenceHandler.setLastSelectedSort(AppConstants.DATE_ASC);
+                preferenceHandler.setLastSelectedSortTitle(context.getString(R.string.STR_DATE_DESC));
                 break;
             default:
                 preferenceHandler.setLastSelectedSort("");
