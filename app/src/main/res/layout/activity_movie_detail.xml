@@ -196,11 +196,25 @@
                         app:trimMode='trimModeLength'
                         tools:text="ajkaghsjhasakjshjkahsahsjaajkaghsjhasakjshjkahsahsjaajkaghsjhasakjshjkahsahsjaajkaghsjhasakjshjkahsahsjaajkaghsjhasakjshjkahsahsjaajkaghsjhasakjshjkahsahsjaajkaghsjhasakjshjkahsahsjaajkaghsjhasakjshjkahsahsjaajkaghsjhasakjshjkahsahsja" />
 
+
+                    <Button
+                        android:id="@+id/btn_book_movie"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/tv_description"
+                        android:layout_marginTop="@dimen/_3sdp"
+                        android:layout_marginBottom="@dimen/_7sdp"
+                        android:text="@string/STR_HEADING"
+                        android:textColor="@color/text_color_4"
+                        android:textSize="@dimen/_16ssp"
+                        />
+
+
                     <androidx.constraintlayout.widget.ConstraintLayout
                         android:id="@+id/price_address_constraint"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_below="@+id/tv_description"
+                        android:layout_below="@+id/btn_book_movie"
                         android:layout_marginTop="@dimen/_10sdp"
                         android:layout_marginBottom="@dimen/_15sdp"
                         android:background="@color/white"

@@ -30,6 +30,14 @@
         <activity
             android:name=".views.ImageSliderActivity"
             android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".views.AdvWebActivity"
+            android:screenOrientation="portrait" />
+
+        <meta-data
+            android:name="io.fabric.ApiKey"
+            android:value="${fabricApiKey}" />
     </application>
 
 </manifest>

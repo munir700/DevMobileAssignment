@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.app.Application;
 import android.content.Context;
 
+import com.crashlytics.android.Crashlytics;
 import com.facebook.stetho.DumperPluginsProvider;
 import com.facebook.stetho.Stetho;
 import com.facebook.stetho.dumpapp.DumperPlugin;
@@ -17,6 +18,7 @@ import assignment.cleancode.mobiledevassignment.extendedmodels.CustomDumperPlugi
 import dagger.android.AndroidInjector;
 import dagger.android.DispatchingAndroidInjector;
 import dagger.android.HasActivityInjector;
+import io.fabric.sdk.android.Fabric;
 
 public class AppApplication extends Application implements HasActivityInjector {
 
@@ -34,6 +36,8 @@ public class AppApplication extends Application implements HasActivityInjector {
     @Override
     public void onCreate() {
         super.onCreate();
+
+        Fabric.with(this, new Crashlytics());
         if (BuildConfig.DEBUG)
             refWatcher = LeakCanary.install(this);
         initStetho();

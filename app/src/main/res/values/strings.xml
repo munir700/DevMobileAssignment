@@ -36,4 +36,10 @@
 
     <string name="STR_SORT_DATE_ASC">Sort by Ascending Date</string>
     <string name="STR_SORT_DATE_DESC">Sort by Descending Date</string>
+
+    <string name="STR_BLOG_OPEN_IN_APP_PHRASE">cathaycineplexes</string>
+
+    <string name="STR_WEB_URL">https://www.cathaycineplexes.com.sg/</string>
+    <string name="STR_URL_USER_AGENT"> assignment-mobile-app</string>
+    <string name="STR_HEADING">Book the movie</string>
 </resources>

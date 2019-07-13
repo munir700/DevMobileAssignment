@@ -1,6 +1,7 @@
 package assignment.cleancode.mobiledevassignment.di.modules;
 
 
+import assignment.cleancode.mobiledevassignment.views.AdvWebActivity;
 import assignment.cleancode.mobiledevassignment.views.ImageSliderActivity;
 import assignment.cleancode.mobiledevassignment.views.MovieDetailActivity;
 import assignment.cleancode.mobiledevassignment.views.MoviesActivity;
@@ -17,4 +18,8 @@ public abstract class ActivityBuilderModule {
 
     @ContributesAndroidInjector
     abstract ImageSliderActivity imageSliderActivity();
+
+
+    @ContributesAndroidInjector
+    abstract AdvWebActivity advWebActivity();
 }
