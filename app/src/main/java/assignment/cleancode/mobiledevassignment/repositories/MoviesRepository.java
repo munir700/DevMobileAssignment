@@ -85,31 +85,4 @@ public class MoviesRepository {
         return moviesLiveData;
     }
 
-    public MutableLiveData<Videos> getMovieVideo(final BaseViewModel viewModel, Call<Videos> listCall, String movieId) {
-
-        final MutableLiveData<Videos> moviesLiveData = new MutableLiveData<>();
-        if (networkUtils.isConnectedToInternet()) {
-            if (listCall != null)
-                listCall.cancel();
-
-            listCall = apiEnvelopeService.getMovieVideo(Integer.valueOf(movieId), BuildConfig.API_KEY, "en-US");
-            listCall.enqueue(new Callback<Videos>() {
-                @Override
-                public void onResponse(Call<Videos> call, Response<Videos> response) {
-                    if (!call.isCanceled() && response.isSuccessful()) {
-                        moviesLiveData.postValue(response.body());
-                    }
-                }
-
-                @Override
-                public void onFailure(Call<Videos> call, Throwable t) {
-
-                }
-            });
-
-        } else {
-            viewModel.notifyObserver(ViewModelEventsEnum.NO_INTERNET_CONNECTION, viewModel.getAppManager().getContext().getString(R.string.NO_INTERNET_CONNECTIVITY));
-        }
-        return moviesLiveData;
-    }
 }

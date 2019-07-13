@@ -80,7 +80,6 @@ public class MovieDetailActivity extends BaseActivity<MovieDetailViewModel, Acti
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         movieDetail = getIntent().getParcelableExtra(MOVIES_INTENT_KEY);
-        loadMovieVideo();
         loadMovieDetail();
         initImagePlaceHolder();
         binding.tvDescription.setOnClickListener(new View.OnClickListener() {
@@ -131,18 +130,11 @@ public class MovieDetailActivity extends BaseActivity<MovieDetailViewModel, Acti
         });
     }
 
-    private void loadMovieVideo() {
-        viewModel.getMovieVideo(movieDetail.getId()).observe(this, new Observer<Videos>() {
-            @Override
-            public void onChanged(@Nullable Videos video) {
-                videos = video;
-            }
-        });
-    }
+
 
     private void openImageSilderActivity() {
-       /* Intent fullMediaqIntent = new Intent(this, ImageSliderActivity.class);
+        Intent fullMediaqIntent = new Intent(this, ImageSliderActivity.class);
         fullMediaqIntent.putExtra(ImageSliderActivity.MOVIE, movieDetail);
-        startActivityForResult(fullMediaqIntent, REQUEST_CODE);*/
+        startActivityForResult(fullMediaqIntent, REQUEST_CODE);
     }
 }

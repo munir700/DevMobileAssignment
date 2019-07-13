@@ -48,9 +48,6 @@ public class MovieDetailViewModel extends BaseViewModel {
         return moviesRepository.getMovieDetail(this, movieCall, moviezId);
     }
 
-    public MutableLiveData<Videos> getMovieVideo(String moviezId) {
-        return moviesRepository.getMovieVideo(this, videosCall, moviezId);
-    }
 
     public List<MovieListing> removeAdultMovies(List<MovieListing> listData) {
         for (MovieListing movie : listData) {

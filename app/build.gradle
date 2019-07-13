@@ -17,7 +17,7 @@ android {
         buildConfigField "String", "IMG_BASE_URL", "\"https://image.tmdb.org/t/p/w185_and_h278_bestv2/\""
         //buildConfigField "String", "IMG_BASE_URL", "\"https://image.tmdb.org/t/p/w300_and_h450_bestv2/\""
         //https://image.tmdb.org/t/p/w185_and_h278_bestv2/x2LSRK2Cm7MZhjluni1msVJ3wDF.jpg
-        buildConfigField "String", "IMG_BASE_URL_LARGE", "\"https://image.tmdb.org/t/p/w500_and_h282_face\""
+        buildConfigField "String", "IMG_BASE_URL_LARGE", "\"https://image.tmdb.org/t/p/w600_and_h900_bestv2\""
 
     }
     buildTypes {

@@ -16,9 +16,6 @@ public interface ApiEnvelopeService {
     Call<ArrayListWithTotalResultCount<MovieListing>> getDiscoverMovieList(@Query("api_key") String apiKey, @Query("primary_release_date.lte") String primaryReleaseDate,@Query("sort_by") String releaseDateDesc, @Query("page") int page);
 
 
-    @GET("movie/{movie_id}/videos")
-    Call<Videos> getMovieVideo(@Path("movie_id") int movieId, @Query("api_key") String apiKey, @Query("language") String lang);
-
 
 
 }
