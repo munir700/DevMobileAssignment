@@ -10,7 +10,7 @@ import android.view.View;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.lifecycle.Observer;
-import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.recyclerview.widget.SimpleItemAnimator;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
@@ -100,7 +100,7 @@ public class MoviesActivity extends BaseActivity<MovieViewModel, ActivityMoviesB
         super.onCreate(savedInstanceState);
         binding.setVm(viewModel);
         binding.setCountText(viewModel.getMovieCount());
-        binding.setPlayingType(viewModel.getPlayType());
+        binding.setSortOder(viewModel.getSortOrder());
         initUI();
         initScrollListener();
         loadMovies();
@@ -120,7 +120,7 @@ public class MoviesActivity extends BaseActivity<MovieViewModel, ActivityMoviesB
             });
 
             binding.recyclerResults.setAdapter(listingAdapter);
-            binding.recyclerResults.setLayoutManager(new GridLayoutManager(this, 1));
+            binding.recyclerResults.setLayoutManager(new LinearLayoutManager(this));
 
             binding.searchAgainBtn.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -165,7 +165,7 @@ public class MoviesActivity extends BaseActivity<MovieViewModel, ActivityMoviesB
             public void onScrolled(@NonNull RecyclerView recyclerView, int dx, int dy) {
                 super.onScrolled(recyclerView, dx, dy);
 
-                GridLayoutManager linearLayoutManager = (GridLayoutManager) recyclerView.getLayoutManager();
+                LinearLayoutManager linearLayoutManager = (LinearLayoutManager) recyclerView.getLayoutManager();
 
                 if (viewModel.isLastPageLoaded()) {
                     if (linearLayoutManager != null && linearLayoutManager.findLastCompletelyVisibleItemPosition() == listingAdapter.getItemCount() - 1) {
@@ -195,7 +195,7 @@ public class MoviesActivity extends BaseActivity<MovieViewModel, ActivityMoviesB
     private void filterMovies(final ArrayListWithTotalResultCount<MovieListing> movies) {
         List<MovieListing> movieList = viewModel.removeAdultMovies(movies);
         viewModel.setMovieCount(String.valueOf(movies.getTotalNumberOfResults()));
-        viewModel.setPlayType(viewModel.getLastSelectedSortTitle());
+        viewModel.setSortOrder(viewModel.getLastSelectedSortTitle(getString(R.string.STR_SORT_DATE_DESC)));
         listingAdapter.setData(movieList);
 
     }

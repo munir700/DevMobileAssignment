@@ -61,7 +61,7 @@
 
     <style name="row_tv_style" parent="textview_style_default">
         <item name="android:textSize">@dimen/_11ssp</item>
-        <item name="android:maxLines">1</item>
+        <item name="android:maxLines">3</item>
     </style>
 
     <style name="details_section_header_text_style">

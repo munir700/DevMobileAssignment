@@ -28,8 +28,8 @@
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:padding="@dimen/_1sdp">
+            android:layout_height="wrap_content"
+            android:padding="@dimen/_2sdp">
 
             <ImageView
                 android:id="@+id/thumb_iv"
@@ -37,9 +37,9 @@
                 android:layout_height="0dp"
                 android:adjustViewBounds="true"
                 android:scaleType="centerCrop"
-                app:layout_constraintBottom_toBottomOf="@+id/guideline3"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintDimensionRatio="h,9:7"
-                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/guideline3"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:srcCompat="@drawable/img_loading_pics" />
@@ -49,16 +49,32 @@
                 style="@style/row_tv_style"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/_3sdp"
+                android:layout_marginStart="@dimen/_4sdp"
+                android:layout_marginEnd="@dimen/_4sdp"
                 android:ellipsize="end"
                 android:gravity="start"
                 android:text='@{movie.title}'
-                android:textColor="@color/white"
-                android:textSize="@dimen/_12ssp"
-                app:layout_constraintBottom_toBottomOf="@+id/thumb_iv"
-                app:layout_constraintBottom_toTopOf="@+id/description_tv"
-                app:layout_constraintStart_toStartOf="parent"
+                android:textColor="@color/text_color_6"
+                android:textSize="@dimen/_13ssp"
+                app:layout_constraintStart_toStartOf="@+id/guideline3"
+                app:layout_constraintTop_toTopOf="parent"
                 tools:text="Title" />
+
+            <TextView
+                android:id="@+id/popularity_tv"
+                style="@style/row_tv_style"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_4sdp"
+                android:layout_marginEnd="@dimen/_4sdp"
+                android:ellipsize="end"
+                android:gravity="start"
+                android:text='@{movie.popularity}'
+                android:textColor="@color/text_color_6"
+                android:textSize="@dimen/_13ssp"
+                app:layout_constraintStart_toStartOf="@+id/guideline3"
+                app:layout_constraintTop_toBottomOf="@+id/title_tv"
+                tools:text="popularity" />
 
 
             <TextView
@@ -66,21 +82,23 @@
                 style="@style/row_tv_style"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/_3sdp"
-                android:layout_marginBottom="@dimen/_6sdp"
+                android:layout_marginStart="@dimen/_5sdp"
+                android:layout_marginTop="@dimen/_3sdp"
+                android:layout_marginEnd="@dimen/_2sdp"
                 android:ellipsize="end"
                 android:text='@{movie.overview}'
-                android:textColor="@color/white"
+                android:textColor="@color/grey"
                 android:textSize="@dimen/_11ssp"
-                app:layout_constraintBottom_toBottomOf="@+id/thumb_iv"
-                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/guideline3"
+                app:layout_constraintTop_toBottomOf="@+id/popularity_tv"
                 tools:text="Detail" />
 
             <androidx.constraintlayout.widget.Guideline
                 android:id="@+id/guideline3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
+                android:orientation="vertical"
                 app:layout_constraintGuide_percent="0.4" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>

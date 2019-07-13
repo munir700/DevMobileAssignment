@@ -162,7 +162,7 @@
                     <TextView
                         android:id="@+id/tv_details_label"
                         style="@style/details_section_header_text_style"
-                        android:text="@string/DETAILS" />
+                        android:text="@string/STR_DETAILS" />
 
                     <TextView
                         android:id="@+id/tv_title"
@@ -211,7 +211,7 @@
                             layout="@layout/row_detail"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            app:label='@{@string/released}'
+                            app:label='@{@string/STR_RELEASED}'
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toTopOf="parent"
                             app:value='@{movie.status}' />
@@ -221,7 +221,7 @@
                             layout="@layout/row_detail"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            app:label='@{@string/original_title}'
+                            app:label='@{@string/STR_ORIGINAL_TITLE}'
                             app:layout_constraintTop_toBottomOf="@+id/status_section"
                             app:value='@{movie.originalTitle}' />
 
@@ -230,7 +230,7 @@
                             layout="@layout/row_detail"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            app:label='@{@string/tag_line}'
+                            app:label='@{@string/STR_TAG_LINE}'
                             app:layout_constraintTop_toBottomOf="@+id/ot_section"
                             app:value='@{movie.tagline}' />
 
@@ -239,7 +239,7 @@
                             layout="@layout/row_detail"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            app:label='@{@string/released}'
+                            app:label='@{@string/STR_RELEASED_DATE}'
                             app:layout_constraintTop_toBottomOf="@+id/tagline_section"
                             app:value='@{movie.releaseDate}' />
 
@@ -248,7 +248,7 @@
                             layout="@layout/row_detail"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            app:label='@{@string/language}'
+                            app:label='@{@string/STR_LANGUAGE}'
                             app:layout_constraintTop_toBottomOf="@+id/release_date_section"
                             app:value='@{movie.getSpokenLanguage()}' />
 
@@ -257,7 +257,7 @@
                             layout="@layout/row_detail"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            app:label='@{@string/production_country}'
+                            app:label='@{@string/STR_PRODUCTION_COUNTRY}'
                             app:layout_constraintTop_toBottomOf="@+id/spoken_lang_section"
                             app:value='@{movie.getProductionCounties()}' />
 

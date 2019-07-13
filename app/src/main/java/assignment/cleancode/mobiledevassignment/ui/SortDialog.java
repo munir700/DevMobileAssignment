@@ -82,11 +82,11 @@ public class SortDialog extends Dialog {
         switch (position) {
             case INDEX_DATE_DESC:
                 preferenceHandler.setLastSelectedSort(AppConstants.DATE_DESC);
-                preferenceHandler.setLastSelectedSortTitle(context.getString(R.string.STR_DATE_DESC));
+                preferenceHandler.setLastSelectedSortTitle(context.getString(R.string.STR_SORT_DATE_DESC));
                 break;
             case INDEX_DATE_ASC:
                 preferenceHandler.setLastSelectedSort(AppConstants.DATE_ASC);
-                preferenceHandler.setLastSelectedSortTitle(context.getString(R.string.STR_DATE_DESC));
+                preferenceHandler.setLastSelectedSortTitle(context.getString(R.string.STR_SORT_DATE_ASC));
                 break;
             default:
                 preferenceHandler.setLastSelectedSort("");

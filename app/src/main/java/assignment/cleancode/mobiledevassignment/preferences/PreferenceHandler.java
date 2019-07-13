@@ -63,8 +63,8 @@ public class PreferenceHandler {
     }
 
 
-    public String getLastSelectedSortTitle() {
-        return preference.getStringPrefrence(LAST_SELECTED_SORT_TITLE, AppConstants.DATE_DESC);
+    public String getLastSelectedSortTitle(String lastSelectedSortTitle) {
+        return preference.getStringPrefrence(LAST_SELECTED_SORT_TITLE, lastSelectedSortTitle);
     }
 
     public void setLastSelectedSortTitle(String lastSelectedSortTitle) {

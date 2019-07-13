@@ -12,7 +12,7 @@
             type="androidx.databinding.ObservableField&lt;String&gt;" />
 
         <variable
-            name="playingType"
+            name="sortOder"
             type="androidx.databinding.ObservableField&lt;String&gt;" />
 
         <variable
@@ -95,15 +95,16 @@
                     tools:text="325" />
 
                 <TextView
-                    android:id="@+id/movie_type_tv_tb"
+                    android:id="@+id/sort_order_tv_tb"
                     style="@style/search_result_header_tv_style"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="@dimen/_5sdp"
-                    android:text='@{playingType}'
+                    android:text='@{sortOder}'
                     android:textSize="@dimen/_12ssp"
                     app:layout_constraintBottom_toBottomOf="@+id/count_tv_tb"
                     app:layout_constraintStart_toEndOf="@+id/count_tv_tb"
+                    app:layout_constraintEnd_toStartOf="@+id/sort_iv"
                     app:layout_constraintTop_toTopOf="@+id/count_tv_tb" />
 
 

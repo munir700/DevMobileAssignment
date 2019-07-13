@@ -19,13 +19,13 @@
     <string name="STR_LOADING_DETAILS">Loading details…</string>
     <string name="STR_READ_MORE">" read more"</string>
     <string name="STR_READ_LESS">" read less"</string>
-    <string name="DETAILS">Details</string>
-    <string name="released">Released</string>
-    <string name="tag_line">Tag Line</string>
-    <string name="released_date">Released Date</string>
-    <string name="language">Language</string>
-    <string name="production_country">Production Countries</string>
-    <string name="original_title">Original title</string>
+    <string name="STR_DETAILS">Details</string>
+    <string name="STR_RELEASED">Released</string>
+    <string name="STR_TAG_LINE">Tag Line</string>
+    <string name="STR_RELEASED_DATE">Released Date</string>
+    <string name="STR_LANGUAGE">Language</string>
+    <string name="STR_PRODUCTION_COUNTRY">Production Countries</string>
+    <string name="STR_ORIGINAL_TITLE">Original title</string>
 
     <string name="STR_DETAILS_TRANSITION">DETAILS_TRANSITION</string>
     <string name="STR_SORTING">Sorting</string>
@@ -33,4 +33,7 @@
 
     <string name="STR_DATE_ASC">Ascending Date</string>
     <string name="STR_DATE_DESC">Descending Date</string>
+
+    <string name="STR_SORT_DATE_ASC">Sort by Ascending Date</string>
+    <string name="STR_SORT_DATE_DESC">Sort by Descending Date</string>
 </resources>

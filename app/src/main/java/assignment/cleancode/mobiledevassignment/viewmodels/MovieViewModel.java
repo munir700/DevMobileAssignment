@@ -25,7 +25,7 @@ import retrofit2.Call;
 public class MovieViewModel extends BaseViewModel {
 
     private ObservableField<String> movieCount = new ObservableField<>();
-    private ObservableField<String> playType = new ObservableField<>();
+    private ObservableField<String> sortOrder = new ObservableField<>();
 
     public List<MovieListing> listMovies = new ArrayList<>();
     public MutableLiveData<List<MovieListing>> mutableLiveData = new MutableLiveData<>();
@@ -69,20 +69,20 @@ public class MovieViewModel extends BaseViewModel {
     }
 
 
-    public ObservableField<String> getPlayType() {
-        return playType;
+    public ObservableField<String> getSortOrder() {
+        return sortOrder;
     }
 
-    public void setPlayType(String playType) {
-        this.playType.set(playType);
+    public void setSortOrder(String sortOrder) {
+        this.sortOrder.set(sortOrder);
     }
 
     public PreferenceHandler getPreferenceHandler() {
         return preferenceHandler;
     }
 
-    public String getLastSelectedSortTitle() {
-        return preferenceHandler.getLastSelectedSortTitle();
+    public String getLastSelectedSortTitle(String lastSelectedSortTitle) {
+        return preferenceHandler.getLastSelectedSortTitle(lastSelectedSortTitle);
     }
 
     @Bindable

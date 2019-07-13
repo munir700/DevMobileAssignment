@@ -18,13 +18,11 @@
             app:icon='@{@drawable/ic_back_white}' />
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_below="@+id/layout_toolbar"
             android:id="@+id/viewPager_contraint"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:layout_below="@+id/layout_toolbar"
             android:layout_centerInParent="true">
-
-
 
 
             <androidx.viewpager.widget.ViewPager
