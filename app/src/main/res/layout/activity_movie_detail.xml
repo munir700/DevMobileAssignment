@@ -199,15 +199,15 @@
 
                     <Button
                         android:id="@+id/btn_book_movie"
+                        style="@style/Widget.AppCompat.Button.Borderless"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_below="@+id/tv_description"
                         android:layout_marginTop="@dimen/_3sdp"
                         android:layout_marginBottom="@dimen/_7sdp"
                         android:text="@string/STR_HEADING"
-                        android:textColor="@color/text_color_4"
-                        android:textSize="@dimen/_16ssp"
-                        />
+                        android:textColor="@color/colorPrimaryDark"
+                        android:textSize="@dimen/_16ssp" />
 
 
                     <androidx.constraintlayout.widget.ConstraintLayout
