@@ -71,7 +71,7 @@ public class Movie extends BaseObservable implements Parcelable {
 
     private String status;
 
-    public Movie(){
+    public Movie() {
 
     }
 
@@ -347,32 +347,44 @@ public class Movie extends BaseObservable implements Parcelable {
         this.status = status;
     }
 
+
+    public String getGenreValues() {
+        if (genres == null)
+            return null;
+        else {
+            StringBuilder builder = new StringBuilder();
+            int length = genres.length;
+            for (int index = 0; index < length; index++) {
+                builder.append(index != 0 ? ", " + genres[index].getName() : genres[index].getName());
+            }
+            return builder.toString();
+        }
+    }
+
     public String getProductionCounties() {
-        StringBuilder builder = new StringBuilder();
-        if (productionCountries != null) {
+        if (productionCountries == null)
+            return "";
+        else {
+            StringBuilder builder = new StringBuilder();
             int length = productionCountries.length;
             for (int index = 0; index < length; index++) {
-                builder.append(productionCountries[index].getName());
-                if (index != length - 1) {
-                    builder.append(", ");
-                }
+                builder.append(index != 0 ? ", " + productionCountries[index].getName() : productionCountries[index].getName());
             }
+            return builder.toString();
         }
-        return builder.toString();
     }
 
     public String getSpokenLanguage() {
-        StringBuilder builder = new StringBuilder();
-        if (spokenLanguages != null) {
+        if (spokenLanguages == null)
+            return "";
+        else {
+            StringBuilder builder = new StringBuilder();
             int length = spokenLanguages.length;
             for (int index = 0; index < length; index++) {
-                builder.append(spokenLanguages[index].getName());
-                if (index != length - 1) {
-                    builder.append(", ");
-                }
+                builder.append(index != 0 ? ", " + spokenLanguages[index].getName() : spokenLanguages[index].getName());
             }
+            return builder.toString();
         }
-        return builder.toString();
     }
 
     @Override
@@ -380,7 +392,7 @@ public class Movie extends BaseObservable implements Parcelable {
         return "ClassPojo [originalLanguage = " + originalLanguage + ", imdbId = " + imdbId + ", video = " + video + ", title = " + title + ", backdropPath = " + backdropPath + ", revenue = " + revenue + ", genres = " + genres + ", popularity = " + popularity + ", productionCountries = " + productionCountries + ", id = " + id + ", voteCount = " + voteCount + ", budget = " + budget + ", overview = " + overview + ", originalTitle = " + originalTitle + ", runtime = " + runtime + ", posterPath = " + posterPath + ", spokenLanguages = " + spokenLanguages + ", productionCompanies = " + productionCompanies + ", releaseDate = " + releaseDate + ", voteAverage = " + voteAverage + ", belongsToCollection = " + belongsToCollection + ", tagline = " + tagline + ", adult = " + adult + ", homepage = " + homepage + ", status = " + status + "]";
     }
 
-    public Movie toMovie(MovieListing movieListing){
+    public Movie toMovie(MovieListing movieListing) {
         setId(movieListing.getId());
         setTitle(movieListing.getTitle());
         setOriginalTitle(movieListing.getOriginalTitle());

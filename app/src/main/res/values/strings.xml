@@ -22,6 +22,7 @@
     <string name="STR_DETAILS">Details</string>
     <string name="STR_RELEASED">Released</string>
     <string name="STR_TAG_LINE">Tag Line</string>
+    <string name="STR_genres">Genres</string>
     <string name="STR_RELEASED_DATE">Released Date</string>
     <string name="STR_LANGUAGE">Language</string>
     <string name="STR_PRODUCTION_COUNTRY">Production Countries</string>
@@ -41,5 +42,5 @@
 
     <string name="STR_WEB_URL">https://www.cathaycineplexes.com.sg/</string>
     <string name="STR_URL_USER_AGENT"> assignment-mobile-app</string>
-    <string name="STR_HEADING">Book the movie</string>
+    <string name="STR_BOOK_NOW_HEADING">Book Now</string>
 </resources>

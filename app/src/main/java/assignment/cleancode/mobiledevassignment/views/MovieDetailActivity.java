@@ -92,7 +92,7 @@ public class MovieDetailActivity extends BaseActivity<MovieDetailViewModel, Acti
         binding.btnBookMovie.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                AdvWebActivity.open(MovieDetailActivity.this, getString(R.string.STR_HEADING), getString(R.string.STR_WEB_URL), getString(R.string.STR_URL_USER_AGENT));
+                AdvWebActivity.open(MovieDetailActivity.this, getString(R.string.STR_BOOK_NOW_HEADING), getString(R.string.STR_WEB_URL), getString(R.string.STR_URL_USER_AGENT));
             }
         });
     }

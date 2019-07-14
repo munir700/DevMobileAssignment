@@ -5,6 +5,8 @@
 
     <data>
 
+        <import type="android.view.View" />
+
         <variable
             name="movie"
             type="assignment.cleancode.mobiledevassignment.models.Movie" />
@@ -205,7 +207,7 @@
                         android:layout_below="@+id/tv_description"
                         android:layout_marginTop="@dimen/_3sdp"
                         android:layout_marginBottom="@dimen/_7sdp"
-                        android:text="@string/STR_HEADING"
+                        android:text="@string/STR_BOOK_NOW_HEADING"
                         android:textColor="@color/colorPrimaryDark"
                         android:textSize="@dimen/_16ssp" />
 
@@ -240,12 +242,23 @@
                             app:value='@{movie.originalTitle}' />
 
                         <include
+                            android:id="@+id/genres_section"
+                            layout="@layout/row_detail"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:visibility='@{movie.getGenreValues() != null ? View.VISIBLE : View.GONE}'
+                            app:label='@{@string/STR_genres}'
+                            app:layout_constraintTop_toBottomOf="@+id/ot_section"
+                            app:value='@{movie.getGenreValues() != null ? movie.getGenreValues() : ""}' />
+
+                        <include
                             android:id="@+id/tagline_section"
                             layout="@layout/row_detail"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:visibility='@{movie.tagline != null &amp;&amp; !movie.tagline.isEmpty() ? View.VISIBLE : View.GONE}'
                             app:label='@{@string/STR_TAG_LINE}'
-                            app:layout_constraintTop_toBottomOf="@+id/ot_section"
+                            app:layout_constraintTop_toBottomOf="@+id/genres_section"
                             app:value='@{movie.tagline}' />
 
                         <include
@@ -271,6 +284,7 @@
                             layout="@layout/row_detail"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:visibility='@{!movie.getProductionCounties().isEmpty() ? View.VISIBLE : View.GONE}'
                             app:label='@{@string/STR_PRODUCTION_COUNTRY}'
                             app:layout_constraintTop_toBottomOf="@+id/spoken_lang_section"
                             app:value='@{movie.getProductionCounties()}' />

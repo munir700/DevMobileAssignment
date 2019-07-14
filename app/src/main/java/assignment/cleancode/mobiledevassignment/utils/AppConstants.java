@@ -12,7 +12,7 @@ import assignment.cleancode.mobiledevassignment.models.SortModel;
 
 public class AppConstants {
     public static final String DATE_DESC = "\"release_date.desc\"";
-    public static final String DATE_ASC = "\"release_date.asc\"";
+    public static final String DATE_ASC = "\"popularity.asc\"";
 
 
     // SORT Data
