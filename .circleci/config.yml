@@ -1,0 +1,39 @@
+version: 2
+jobs:
+  build:
+    working_directory: ~/MobileDevAssignment
+    docker:
+      - image: circleci/android:api-28
+    environment:
+      JVM_OPTS: -Xmx2048m
+      GRADLE_OPTS: '-Dorg.gradle.jvmargs="-Xmx2048m -XX:+HeapDumpOnOutOfMemoryError"'
+    steps:
+      - checkout
+      - restore_cache:
+          key: jars-{{ checksum "build.gradle" }}-{{ checksum  "app/build.gradle" }}
+      #      - run:
+      #         name: Chmod permissions #if permission for Gradlew Dependencies fail, use this.
+      #         command: sudo chmod +x ./gradlew
+      - run:
+          name: Download Dependencies
+          command: ./gradlew androidDependencies
+      - save_cache:
+          paths:
+            - ~/.gradle
+          key: jars-{{ checksum "build.gradle" }}-{{ checksum  "app/build.gradle" }}
+      - run:
+          name: Build App
+          command: ./gradlew clean assembleDebug --stacktrace
+      - run:
+          name: Run Lint Tests App
+          command: ./gradlew clean assembleDebug --stacktrace
+      - store_artifacts: # for display in Artifacts: https://circleci.com/docs/2.0/artifacts/
+          path: app/build/reports
+          destination: reports
+      - store_test_results: # for display in Test Summary: https://circleci.com/docs/2.0/collect-test-data/
+          path: app/build/test-results
+workflows:
+  version: 2
+  workflow:
+    jobs:
+      - build
