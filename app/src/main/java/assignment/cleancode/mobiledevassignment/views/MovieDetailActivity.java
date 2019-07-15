@@ -21,7 +21,6 @@ import assignment.cleancode.mobiledevassignment.base.BaseActivity;
 import assignment.cleancode.mobiledevassignment.databinding.ActivityMovieDetailBinding;
 import assignment.cleancode.mobiledevassignment.enums.ViewModelEventsEnum;
 import assignment.cleancode.mobiledevassignment.models.Movie;
-import assignment.cleancode.mobiledevassignment.models.Videos;
 import assignment.cleancode.mobiledevassignment.viewmodels.MovieDetailViewModel;
 
 
@@ -33,7 +32,6 @@ public class MovieDetailActivity extends BaseActivity<MovieDetailViewModel, Acti
 
 
     private Movie movieDetail;
-    private Videos videos;
 
     public static void openActivityForResult(Activity activity,
                                              Movie movie, int requestCode, int listingPosition) {
@@ -80,6 +78,7 @@ public class MovieDetailActivity extends BaseActivity<MovieDetailViewModel, Acti
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         movieDetail = getIntent().getParcelableExtra(MOVIES_INTENT_KEY);
+        binding.setMovie(movieDetail);
         loadMovieDetail();
         initImagePlaceHolder();
 

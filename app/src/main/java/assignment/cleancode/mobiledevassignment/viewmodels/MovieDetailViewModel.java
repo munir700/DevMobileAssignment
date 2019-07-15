@@ -13,7 +13,6 @@ import assignment.cleancode.mobiledevassignment.BR;
 import assignment.cleancode.mobiledevassignment.base.BaseViewModel;
 import assignment.cleancode.mobiledevassignment.models.Movie;
 import assignment.cleancode.mobiledevassignment.models.MovieListing;
-import assignment.cleancode.mobiledevassignment.models.Videos;
 import assignment.cleancode.mobiledevassignment.repositories.MoviesRepository;
 import assignment.cleancode.mobiledevassignment.utils.ErrorResponse;
 import retrofit2.Call;
@@ -24,7 +23,6 @@ public class MovieDetailViewModel extends BaseViewModel {
     private ErrorResponse errorResponse;
 
     Call<Movie> movieCall;
-    Call<Videos> videosCall;
 
     @Inject
     MoviesRepository moviesRepository;

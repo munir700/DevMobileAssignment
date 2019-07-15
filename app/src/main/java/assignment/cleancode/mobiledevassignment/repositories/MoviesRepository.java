@@ -15,10 +15,8 @@ import assignment.cleancode.mobiledevassignment.enums.ViewModelEventsEnum;
 import assignment.cleancode.mobiledevassignment.models.ArrayListWithTotalResultCount;
 import assignment.cleancode.mobiledevassignment.models.Movie;
 import assignment.cleancode.mobiledevassignment.models.MovieListing;
-import assignment.cleancode.mobiledevassignment.models.Videos;
 import assignment.cleancode.mobiledevassignment.utils.NetworkUtils;
 import retrofit2.Call;
-import retrofit2.Callback;
 import retrofit2.Response;
 
 public class MoviesRepository {

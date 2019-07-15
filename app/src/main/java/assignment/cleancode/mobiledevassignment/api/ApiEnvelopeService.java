@@ -3,10 +3,8 @@ package assignment.cleancode.mobiledevassignment.api;
 
 import assignment.cleancode.mobiledevassignment.models.ArrayListWithTotalResultCount;
 import assignment.cleancode.mobiledevassignment.models.MovieListing;
-import assignment.cleancode.mobiledevassignment.models.Videos;
 import retrofit2.Call;
 import retrofit2.http.GET;
-import retrofit2.http.Path;
 import retrofit2.http.Query;
 
 public interface ApiEnvelopeService {

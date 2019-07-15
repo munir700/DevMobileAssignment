@@ -48,6 +48,13 @@ android {
     compileOptions {
         targetCompatibility JavaVersion.VERSION_1_8
     }
+
+    testOptions {
+        unitTests.returnDefaultValues = true
+        unitTests {
+            includeAndroidResources = true
+        }
+    }
 }
 
 
@@ -56,6 +63,7 @@ repositories {
     maven { url 'https://maven.fabric.io/public' }
     mavenCentral()
     maven { url "https://jitpack.io" }
+
 }
 
 def daggerSupportVersion = '2.14.1'
@@ -71,6 +79,10 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test:runner:1.2.0'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+    testImplementation 'org.robolectric:robolectric:4.3'
+    androidTestImplementation 'junit:junit:4.12'
+    androidTestImplementation 'org.mockito:mockito-core:2.19.0'
+
     implementation('com.crashlytics.sdk.android:crashlytics:2.9.9@aar') {
         transitive = true;
     }
