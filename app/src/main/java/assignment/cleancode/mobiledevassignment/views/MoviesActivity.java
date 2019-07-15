@@ -28,6 +28,7 @@ import assignment.cleancode.mobiledevassignment.enums.ViewModelEventsEnum;
 import assignment.cleancode.mobiledevassignment.models.ArrayListWithTotalResultCount;
 import assignment.cleancode.mobiledevassignment.models.Movie;
 import assignment.cleancode.mobiledevassignment.models.MovieListing;
+import assignment.cleancode.mobiledevassignment.ui.ActionDialog;
 import assignment.cleancode.mobiledevassignment.ui.SortDialog;
 import assignment.cleancode.mobiledevassignment.utils.AppConstants;
 import assignment.cleancode.mobiledevassignment.utils.ErrorResponse;
@@ -54,9 +55,14 @@ public class MoviesActivity extends BaseActivity<MovieViewModel, ActivityMoviesB
         super.onObserve(event, eventMessage);
         switch (event) {
             case NO_INTERNET_CONNECTION:
-                binding.pullToRefresh.setVisibility(View.GONE);
-                binding.constraintError.setVisibility(View.VISIBLE);
-                viewModel.setErrorResponse(new ErrorResponse.Builder(ErrorResponseEnum.NO_INTERNET_CONNECTION).build());
+                if (listingAdapter == null || listingAdapter.getData() == null || listingAdapter.getData().size() == 0) {
+                    binding.pullToRefresh.setVisibility(View.GONE);
+                    binding.constraintError.setVisibility(View.VISIBLE);
+                    viewModel.setErrorResponse(new ErrorResponse.Builder(ErrorResponseEnum.NO_INTERNET_CONNECTION).build());
+                } else  if (listingAdapter != null) {
+                    listingAdapter.setFooterVisibility(View.GONE);
+                    onApiRequestFailed(eventMessage.toString());
+                }
                 hideProgress();
                 break;
             case ON_NO_DATA_RECEIVED:
